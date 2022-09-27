@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Nilai</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #555555;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+        }
+        .container {
+            width: 400px;
+            height: 400px;
+            margin: 45px auto;
+            padding: 10px;
+            background-color: #CDC9C3;
+            text-align: center;
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        input[type=number]{
+            width: 25em;
+            padding: 1px;
+            border-width: 2px;
+            border-color: #D9E4DD;
+            font-weight: bold;
+        }
+        button {
+            margin: 20px 0;
+            background-color: #555555;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            
+            
+        }
+        #huruf {
+            font-weight: bolder;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkulator Nilai</h1>
+        <hr>
+        <form action="#">
+            <p>
+                <label for="uts">Nilai UTS</label>
+                <input type="number" id="uts">
+            </p>
+            <p>
+                <label for="tugas">Nilai Tugas </label>
+                <input type="number" id="tugas">
+            </p>
+            <p>
+                <label for="uas">Nilai UAS</label>
+                <input type="number" id="uas">
+            </p>
+            <button onclick="myHitung(); return false">Hitung Hasil</button>
+            <br>
+            <p>Nilai Huruf : <span id="huruf"></span></p>
+        </form>
+    </div>
+    <script>
+        function myHitung(){
+            let uts = document.querySelector('#uts').value;
+            let tugas = document.querySelector('#tugas').value;
+            let uas = document.querySelector('#uas').value;
+
+            let nilaiAkhir = (uts * 0.3) + (tugas * 0.4)+ (uas * 0.3) 
+
+            if (nilaiAkhir >= 80) {
+                nilaiHuruf = "A"
+            }
+            else if(nilaiAkhir >= 70) {
+                nilaiHuruf = "B"
+            }
+            else if(nilaiAkhir >= 60) {
+                nilaiHuruf = "C"
+            }
+            else if(nilaiAkhir >= 40) {
+                nilaiHuruf = "D"
+            }
+            else {
+                nilaiHuruf = "E"
+            }
+
+            huruf.innerHTML = nilaiHuruf
+        }
+    </script>
+</body>
+</html>
